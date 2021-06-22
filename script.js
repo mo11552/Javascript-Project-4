@@ -38,38 +38,38 @@ function game() {
     player = player.toLowerCase();
     computer = computer.toLowerCase();
     if(player === computer){
-      result.textContent = 'Tie'
+      result.textContent = 'Tie' + ' ' + 'and' + ' ' + 'Computer chose' + ' ' + computer;
     }
     else if(player == 'rock'){
       if(computer == 'paper'){
-        result.textContent = 'Computer Won';
+        result.textContent = 'Computer Won' + ' ' + 'and' + ' ' + 'Computer chose' + ' ' + computer;
         computerScore++;
         computerScoreBoard.textContent = computerScore;
 
       }else{
-        result.textContent = 'Player Won'
+        result.textContent = 'Player Won' + ' ' + 'and' + ' ' + 'Computer chose' + ' ' + computer;
         playerScore++;
         playerScoreBoard.textContent = playerScore;
       }
     }
     else if(player == 'scissors'){
       if(computer == 'rock'){
-        result.textContent = 'Computer Won';
+        result.textContent = 'Computer Won' + ' ' + 'and' + ' ' + 'Computer chose' + ' ' + computer;
         computerScore++;
         computerScoreBoard.textContent = computerScore;
       }else{
-        result.textContent = 'Player Won';
+        result.textContent = 'Player Won' + ' ' + 'and' + ' ' + 'Computer chose' + ' ' + computer;
         playerScore++;
         playerScoreBoard.textContent = playerScore;
       }
     }
     else if(player == 'paper'){
       if(computer == 'scissors'){
-        result.textContent = 'Computer Won';
+        result.textContent = 'Computer Won' + ' ' + 'and' + ' ' + 'Computer chose' + ' ' + computer;
         computerScore++;
         computerScoreBoard.textContent = computerScore;
       }else{
-        result.textContent = 'Player Won';
+        result.textContent = 'Player Won' + ' ' + 'and' + ' ' + 'Computer chose' + ' ' + computer;
         playerScore++;
         playerScoreBoard.textContent = playerScore;
       }
