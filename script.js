@@ -1,14 +1,16 @@
-function game() {
+const game = () => {
   var playerScore = 0;
   var computerScore = 0;
   var moves = 0;
 
-  function playGame() {
+  
+  const playGame = () => {
     var rockBtn = document.querySelector('.rock');
     var paperBtn = document.querySelector('.paper');
     var scissorBtn = document.querySelector('.scissor');
     var playerOptions = [rockBtn,paperBtn,scissorBtn];
     var computerOptions = ['rock','paper','scissors']
+
     
     playerOptions.forEach(option => {
       option.addEventListener('click',function(){
@@ -16,22 +18,21 @@ function game() {
         var movesLeft = document.querySelector('.movesleft');
         moves++;
         movesLeft.innerText = `Moves Left: ${10-moves}`;
-        
+          
 
         var choiceNumber = Math.floor(Math.random()*3);
         var computerChoice = computerOptions[choiceNumber];
 
         winner(this.innerText,computerChoice)
-        
+          
         if(moves == 10){
           gameOver(playerOptions,movesLeft);
         }
       })
     })
-    
   }
 
-  function winner(player,computer) {
+  const winner = (player,computer) => {
     var result = document.querySelector('.result');
     var playerScoreBoard = document.querySelector('.p-count');
     var computerScoreBoard = document.querySelector('.c-count');
@@ -76,8 +77,8 @@ function game() {
     }
   }
 
-  // Function to run when game is over
-  function gameOver(playerOptions,movesLeft) {
+    // Function to run when game is over
+  const gameOver = (playerOptions,movesLeft) => {
 
     var chooseMove = document.querySelector('.move');
     var result = document.querySelector('.result');
@@ -87,7 +88,7 @@ function game() {
       option.style.display = 'none';
     })
 
-  
+    
     chooseMove.innerText = 'Game Over!!'
     movesLeft.style.display = 'none';
 
@@ -114,8 +115,7 @@ function game() {
   }
 
   playGame();
-  
-}
+} 
 
 game();
 
