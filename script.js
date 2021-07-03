@@ -1,12 +1,13 @@
-const playGame = () => {
   var moves = 0;
   var rockBtn = document.querySelector('.rock');
   var paperBtn = document.querySelector('.paper');
   var scissorBtn = document.querySelector('.scissor');
   var playerOptions = [rockBtn,paperBtn,scissorBtn];
   var computerOptions = ['rock','paper','scissors']
+  var playerScore = 0;
+  var computerScore = 0;
 
-    
+const playGame = () => {    
   playerOptions.forEach(option => {
     option.addEventListener('click',function(){
 
@@ -18,7 +19,7 @@ const playGame = () => {
       var choiceNumber = Math.floor(Math.random()*3);
       var computerChoice = computerOptions[choiceNumber];
 
-      winner(this.innerText,computerChoice)
+      winner(this.innerText,computerChoice,playerScore,computerScore)
           
       if(moves == 10){
         gameOver(playerOptions,movesLeft);
@@ -28,8 +29,6 @@ const playGame = () => {
 }
 
 const winner = (player,computer) => {
-  var playerScore = 0;
-  var computerScore = 0;
   var result = document.querySelector('.result');
   var playerScoreBoard = document.querySelector('.p-count');
   var computerScoreBoard = document.querySelector('.c-count');
@@ -112,8 +111,6 @@ const gameOver = (playerOptions,movesLeft) => {
 
 function game() {
   playGame();
-  winner(player,computer);
-  gameOver(playerOptions,movesLeft);
 }
 
 game();
